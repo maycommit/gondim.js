@@ -41,6 +41,11 @@ ooooooooooooooooooooooooo+:::////////++++++++///////+++///+++++sooss+////++/////
 .....................----------:/:-..-+yyo++//////++++++o+ooss-----:+o:-------.-
 */
 (function() {
+
+	function getRandomInteger(maximum) {
+		return Math.floor(Math.random() *  (maximum + 1));
+	}
+
 	function Gondim() {
 		this.numberProjectsForSquad = 0;
 	}
@@ -72,6 +77,17 @@ ooooooooooooooooooooooooo+:::////////++++++++///////+++///+++++sooss+////++/////
 
 	Gondim.prototype.lie = function() {
 		alert('The project almost over')
+	}
+
+	Gondim.prototype.boostTeamMemberMorale = function(memberName) {
+		let phrases = [
+				'Eu confio em você para fazer esse trabalho, ' + memberName,
+				memberName + ' foi o MVP de hoje',
+				'O que eu não faço para o ' + memberName + '?'
+			],
+			phraseNumber = getRandomInteger(2);
+
+		return phrases[phraseNumber];
 	}
 
 	module.export = Gondim;
