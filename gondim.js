@@ -42,7 +42,7 @@ ooooooooooooooooooooooooo+:::////////++++++++///////+++///+++++sooss+////++/////
 */
 (function() {
 	function Gondim() {
-		this.projects = [];
+		this.numberProjectsForSquad = 0;
 	}
 
 	Gondim.prototype.isDead = function() {
@@ -54,12 +54,12 @@ ooooooooooooooooooooooooo+:::////////++++++++///////+++///+++++sooss+////++/////
 	
 	}
 
-	Gondim.prototype.receivedProject = function(squadNumber, project) {
-		if(squadNumber !== this.projects.length) {
-			this.speak('The project will only be adopted if one more official angular boy is hired')
+	Gondim.prototype.receivedProject = function(squadNumber,  arrayProjects) {
+		if(squadNumber >= arrayProjects.length) {
+			this.speak('Number of projects not enough for the team');
 			return;
 		}
-		this.projects.push(project);
+		this.numberProjectsForSquad += arrayProjects.length;
 	}
 
 	Gondim.prototype.speak = function(phrase) {
