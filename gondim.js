@@ -51,7 +51,7 @@ ooooooooooooooooooooooooo+:::////////++++++++///////+++///+++++sooss+////++/////
 		if(bodyStr.indexOf('league of legends') > -1 && bodyStr.indexOf('PUB') > -1){
          	module.export = null;
     	};
-	
+
 	}
 
 	Gondim.prototype.receivedProject = function(squadNumber,  arrayProjects) {
@@ -70,9 +70,9 @@ ooooooooooooooooooooooooo+:::////////++++++++///////+++///+++++sooss+////++/////
 		document.body.innerHTML = document.body.innerHTML.replace(/work/g, 'productivity');
 	}
 
+	Gondim.prototype.lie = function() {
+		alert('The project almost over')
+	}
+
 	module.export = Gondim;
 }());
-
-
-
-
